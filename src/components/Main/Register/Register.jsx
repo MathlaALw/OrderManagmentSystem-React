@@ -10,11 +10,11 @@ function Register() {
         password: "",
         rePassword: "",
         phone: "",
-    });
+    })
 
     function handleChange(e) {
         let { name, value } = e.target;
-        setFormData((x) => ({...x, [name]: value,}));
+        setFormData((x) => ({...x, [name]: value}));
     }
 
     function handleRegister(e) {
@@ -104,6 +104,6 @@ function Register() {
             <Footer />
         </div>
     );
-}
+};
 
 export default Register;
