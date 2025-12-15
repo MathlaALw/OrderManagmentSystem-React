@@ -1,11 +1,8 @@
 import "./Header.css";
 import Nav from "./Nav/Nav";
-
 import logo from "../../Img/LOGO/freshcart-logo.svg";
 
-
-
-const Header = () => {
+function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container justify-content-between">
@@ -25,7 +22,10 @@ const Header = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
           <div className="navbar-nav gap-2">
             <Nav />
 
@@ -42,6 +42,6 @@ const Header = () => {
       </div>
     </nav>
   );
-};
+}
 
 export default Header;
