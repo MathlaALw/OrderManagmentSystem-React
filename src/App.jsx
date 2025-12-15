@@ -6,6 +6,7 @@ import Login from './components/Main/Login/Login'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Register from './components/Main/Register/Register';
 
 
 function App() {
@@ -13,7 +14,9 @@ function App() {
   return (
     <>
       <div>
-   <Login />
+   {/* <Login /> */}
+
+   <Register />
 
 
         </div>

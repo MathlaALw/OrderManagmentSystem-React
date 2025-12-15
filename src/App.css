@@ -18,3 +18,18 @@
 body{
   margin: 0;
 }
+
+
+html, body {
+  height: 100%;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
