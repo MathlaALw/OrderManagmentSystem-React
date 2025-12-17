@@ -1,14 +1,15 @@
 import "./Header.css";
 import Nav from "./Nav/Nav";
 import logo from "../../Img/LOGO/freshcart-logo.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container justify-content-between">
-        <a href="/">
+        <Link to="/">
           <img src={logo} alt="logo" className="logo" />
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -30,12 +31,12 @@ function Header() {
             <Nav />
 
             <div className="navbar-nav">
-              <a className="nav-link" href="/login">
+              <Link  to="/Login">
                 Login
-              </a>
-              <a className="nav-link" href="/register">
+              </Link>
+              <Link to="/Register">
                 Register
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -6,8 +6,6 @@ import { womensFashion, mensFashion } from "../../Data/FationData";
 // import FashionCard component
 import FashionCard from "./FashionCard/FashionCard";
 
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
 
 import "./Login.css";
 
@@ -34,9 +32,9 @@ function Login() {
 
   return (
     <div className="page">
-      <Header />
 
-      <main className="page-content">
+
+      <section className="page-content">
         <section className="Login-section py-5">
           <div className="container">
             <div>
@@ -77,9 +75,8 @@ function Login() {
             )}
           </div>
         </section>
-      </main>
+      </section>
 
-      <Footer />
     </div>
   );
 }

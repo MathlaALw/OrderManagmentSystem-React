@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Header from "../../Header/Header";
-import Footer from "../../Footer/Footer";
+
 import "./Register.css";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
     let [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ function Register() {
         rePassword: "",
         phone: "",
     });
-
+    let navigate = useNavigate();
     function handleRegister(e) {
         e.preventDefault();
         // console.log("Register Data:", formData);
@@ -72,12 +72,17 @@ function Register() {
         }
 
         setErrors(newErrors);
+        let isLoggedIn = false;
 
         if (Object.keys(newErrors).length > 0) {
             return;
         }
         else {
-            setMessage("Registration successful!");
+            // setMessage("Registration successful!");
+            navigate("/Login");
+
+    
+            
         }
        
         
@@ -90,9 +95,9 @@ function Register() {
 
     return (
         <div className="page">
-            <Header />
+     
 
-            <main className="page-content">
+            <section className="page-content">
                 <section className="Register-section py-5">
                     <div className="container">
                         <form className="register-form" onSubmit={handleRegister}>
@@ -169,9 +174,9 @@ function Register() {
                         </form>
                     </div>
                 </section>
-            </main>
+            </section>
 
-            <Footer />
+        
         </div>
     );
 }
