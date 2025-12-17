@@ -31,10 +31,10 @@ function Header() {
             <Nav />
 
             <div className="navbar-nav">
-              <Link  to="/Login">
+              <Link className="nav-link" to="/Login">
                 Login
               </Link>
-              <Link to="/Register">
+              <Link className="nav-link" to="/Register">
                 Register
               </Link>
             </div>
