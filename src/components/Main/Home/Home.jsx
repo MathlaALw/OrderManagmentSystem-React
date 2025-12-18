@@ -4,9 +4,17 @@ import "./Home.css";
 
 import slide1 from "../../../Img/Carousel/slide-1.jpg";
 import slide2 from "../../../Img/Carousel/slider-2.jpg";
+import { useEffect, useState } from "react";
 
 
 function Home() {
+
+    let [responseData, setResponseData] = useState([]);
+    useEffect(() => {
+        fetch("https://ecommerce.routemisr.com/api/v1/products")
+            .then((res) => res.json())
+            .then((data) => setResponseData(data.data));
+    }, []);
     return (
         <div className="page">
 
@@ -88,8 +96,35 @@ function Home() {
                 <section className="Product-section py-3">
                     <div className="container">
                         <div className="row g-3" id="productsRow">
+                            {responseData.map(product => (
+                                
+                                <div className="col-lg-2 col-md-3 col-sm-4 col-6 mb-4" key={product._id}>
+                                    <div className="product-card p-3 d-flex flex-column">
+                                        <div className="product-image-wrapper mb-3">
+                                            <img src={product.imageCover} className="product-img" alt={product.title} />
+                                        </div>
+
+                                        <p className="product-subcategory">{product.subcategory[0].name}</p>
+
+                                        <h5 className="product-title mb-2">{product.title}</h5>
+
+                                        <div className="d-flex justify-content-between align-items-center mb-3">
+                                            <span className="product-price">{product.price} EGP</span>
+                                            <span className="product-rating">
+                                                <i className="fa-solid fa-star star-color"></i> {product.ratingsAverage}
+                                            </span>
+                                        </div>
+
+                                        <div className="mt-auto d-flex gap-2 justify-content-between">
+                                            <button className="product-btn btn-sm">View</button>
+                                            <button className="product-btn btn-sm">Wish List</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
 
                         </div>
+
                     </div>
                 </section>
             </main>
